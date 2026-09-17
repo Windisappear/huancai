@@ -1,0 +1,3449 @@
+{
+  "auto_groups": [
+    "default"
+  ],
+  "data": [
+    {
+      "model_name": "gpt-5.4-mini-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gpt-5.4-mini-official.png",
+      "quota_type": 0,
+      "model_ratio": 0.3,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 1,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gpt-image-2",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gpt-image-2.webp",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.015,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation",
+        "openai-video"
+      ],
+      "popularity_rank": 2,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gpt-image-2-vip",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gpt-image-2.webp",
+      "vendor_id": 15,
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.0169,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation"
+      ],
+      "popularity_rank": 3,
+      "created_time": 1782456041
+    },
+    {
+      "model_name": "gemini-2.5-flash-lite-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-2.5-flash-lite-official.webp",
+      "quota_type": 0,
+      "model_ratio": 0.04,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 4,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 4,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gpt-image-2-official",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gpt-image-2-official.webp",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.135,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation"
+      ],
+      "popularity_rank": 5,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gpt-5.6-luna-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gpt-5.6-luna-official.png",
+      "vendor_id": 15,
+      "quota_type": 0,
+      "model_ratio": 0.35,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 6,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "gemini-3.1-flash-image-preview",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3.1-flash-image-preview.webp",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.025,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "vip",
+        "default",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation",
+        "openai-video"
+      ],
+      "popularity_rank": 7,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gemini-3.1-flash-image-preview-vip",
+      "model_type": 2,
+      "vendor_id": 16,
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.03,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "svip",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation"
+      ],
+      "popularity_rank": 8
+    },
+    {
+      "model_name": "gpt-5.2-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gpt-5.2-official.png",
+      "quota_type": 0,
+      "model_ratio": 0.7,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 8,
+      "enable_groups": [
+        "vip",
+        "svip",
+        "default"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 9,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "deepseek-v4-flash",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/deepseek-v4-flash.webp",
+      "quota_type": 0,
+      "model_ratio": 0.05,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 4,
+      "pricing_period": "offpeak",
+      "pricing_timezone": "Asia/Shanghai",
+      "pricing_schedule_version": "deepseek-v4-20260817",
+      "pricing_peak_windows": [
+        "09:00-12:00",
+        "14:00-18:00"
+      ],
+      "enable_groups": [
+        "svip",
+        "vip",
+        "default"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 10,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "deepseek-v4-pro",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/deepseek-v4-pro.webp",
+      "quota_type": 0,
+      "model_ratio": 0.231,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 3,
+      "pricing_period": "offpeak",
+      "pricing_timezone": "Asia/Shanghai",
+      "pricing_schedule_version": "deepseek-v4-20260817",
+      "pricing_peak_windows": [
+        "09:00-12:00",
+        "14:00-18:00"
+      ],
+      "enable_groups": [
+        "default",
+        "svip",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 11,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "glm-5.3-flash",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/glm-5.3-flash.png",
+      "vendor_id": 20,
+      "quota_type": 0,
+      "model_ratio": 0.05,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 3.15,
+      "enable_groups": [
+        "vip",
+        "svip",
+        "default"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 12,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "gpt-5.6-sol",
+      "model_type": 1,
+      "vendor_id": 15,
+      "quota_type": 0,
+      "model_ratio": 0.5,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "vip",
+        "svip",
+        "default"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 13
+    },
+    {
+      "model_name": "gpt-5.6-terra",
+      "model_type": 1,
+      "vendor_id": 15,
+      "quota_type": 0,
+      "model_ratio": 0.2,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 14
+    },
+    {
+      "model_name": "gpt-image-2.5-sunburst",
+      "model_type": 2,
+      "vendor_id": 15,
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.0225,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "svip",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation",
+        "openai-video"
+      ],
+      "popularity_rank": 15
+    },
+    {
+      "model_name": "seedance-2-mini",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/seedance-2-mini.mp4",
+      "quota_type": 0,
+      "model_ratio": 0.657143,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 16,
+      "created_time": 1782456041
+    },
+    {
+      "model_name": "gpt-6-astra",
+      "model_type": 1,
+      "vendor_id": 15,
+      "quota_type": 0,
+      "model_ratio": 1,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 5,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 17
+    },
+    {
+      "model_name": "gpt-image-2.5-flare",
+      "model_type": 2,
+      "vendor_id": 15,
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.0225,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "svip",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation",
+        "openai-video"
+      ],
+      "popularity_rank": 18
+    },
+    {
+      "model_name": "gemini-3-pro-image-preview",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3-pro-image-preview.webp",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.05,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "svip",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation",
+        "openai-video"
+      ],
+      "popularity_rank": 19,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gemini-3.8-flash",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3.8-flash.png",
+      "vendor_id": 16,
+      "quota_type": 0,
+      "model_ratio": 0.15,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 5,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 20,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "seedance-2-5",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/seedance-2-5.mp4",
+      "quota_type": 0,
+      "model_ratio": 4.5,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 21,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "deepseek-v4-flash-vision-exp",
+      "model_type": 1,
+      "vendor_id": 22,
+      "quota_type": 0,
+      "model_ratio": 0.107143,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 3,
+      "pricing_period": "offpeak",
+      "pricing_timezone": "Asia/Shanghai",
+      "pricing_schedule_version": "deepseek-v4-20260817",
+      "pricing_peak_windows": [
+        "09:00-12:00",
+        "14:00-18:00"
+      ],
+      "enable_groups": [
+        "default",
+        "svip",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 22
+    },
+    {
+      "model_name": "gemini-3.6-flash",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3.6-flash.png",
+      "vendor_id": 16,
+      "quota_type": 0,
+      "model_ratio": 0.15,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 5,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 23,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "gemini_omni_flash",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini_omni_flash.mp4",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.15,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 24,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gemini-3-pro-image-preview-vip",
+      "model_type": 2,
+      "vendor_id": 16,
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.06,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "svip",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation"
+      ],
+      "popularity_rank": 25
+    },
+    {
+      "model_name": "gpt-image-2.5-sunburst-official",
+      "model_type": 2,
+      "vendor_id": 15,
+      "quota_type": 0,
+      "model_ratio": 2,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation"
+      ],
+      "popularity_rank": 26
+    },
+    {
+      "model_name": "grok-4.5",
+      "model_type": 1,
+      "vendor_id": 25,
+      "quota_type": 0,
+      "model_ratio": 0.2,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 3,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 27
+    },
+    {
+      "model_name": "deepseek-flash",
+      "model_type": 1,
+      "vendor_id": 22,
+      "quota_type": 0,
+      "model_ratio": 0.05,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 4,
+      "pricing_period": "offpeak",
+      "pricing_timezone": "Asia/Shanghai",
+      "pricing_schedule_version": "deepseek-v4-20260817",
+      "pricing_peak_windows": [
+        "09:00-12:00",
+        "14:00-18:00"
+      ],
+      "enable_groups": [
+        "svip",
+        "vip",
+        "default"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 28
+    },
+    {
+      "model_name": "seedance-2",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/seedance-2.mp4",
+      "quota_type": 0,
+      "model_ratio": 2.957143,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 29,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gpt-5.4-nano-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gpt-5.4-nano-official.png",
+      "quota_type": 0,
+      "model_ratio": 0.08,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 30,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "grok-video-1.5",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/grok-video-1.5.mp4",
+      "vendor_id": 25,
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.012,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "video_generation_modes": [
+        "text_to_video",
+        "first_frame_image_to_video",
+        "reference_images_to_video"
+      ],
+      "popularity_rank": 31,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "qwen3-max",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/qwen3-max.png",
+      "quota_type": 0,
+      "model_ratio": 0.35,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 4,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 32,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gpt-image-2.5-flare-official",
+      "model_type": 2,
+      "vendor_id": 15,
+      "quota_type": 0,
+      "model_ratio": 2,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation"
+      ],
+      "popularity_rank": 33
+    },
+    {
+      "model_name": "doubao-seedream-5-0-pro",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/doubao-seedream-5-0-pro.png",
+      "vendor_id": 12,
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.042857,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "vip",
+        "default",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation"
+      ],
+      "popularity_rank": 34,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "gpt-5.5",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gpt-5.5.jpg",
+      "quota_type": 0,
+      "model_ratio": 0.75,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 35,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gemini-3.7-flash",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3.7-flash.png",
+      "vendor_id": 16,
+      "quota_type": 0,
+      "model_ratio": 0.15,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 5,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 36,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "grok-4.6",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/grok-4.6.png",
+      "vendor_id": 25,
+      "quota_type": 0,
+      "model_ratio": 0.2,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 3,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 37,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "gpt-5.6-sol-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gpt-5.6-sol-official.png",
+      "vendor_id": 15,
+      "quota_type": 0,
+      "model_ratio": 1.75,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "vip",
+        "svip",
+        "default"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 38,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "qwen3.5-flash",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/qwen3.5-flash.png",
+      "quota_type": 0,
+      "model_ratio": 0.06,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 10,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 39,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "seedance-2-fast",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/seedance-2-fast.mp4",
+      "quota_type": 0,
+      "model_ratio": 1.85,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 40,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "nano_banana_pro",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/nano-banana-pro.png",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.06,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "svip",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation",
+        "openai-video"
+      ],
+      "popularity_rank": 41,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gemini-2.5-flash-image-preview",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-2.5-flash-image-preview.png",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.012,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "svip",
+        "vip",
+        "default"
+      ],
+      "supported_endpoint_types": [
+        "image-generation",
+        "openai-video"
+      ],
+      "popularity_rank": 42,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "doubao-seedream-5-0",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/doubao-seedream-5-0.png",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.0315,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "svip",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation"
+      ],
+      "popularity_rank": 43,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gpt-5.4-mini",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gpt-5.4-mini.png",
+      "quota_type": 0,
+      "model_ratio": 0.1125,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 4,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 44,
+      "created_time": 1779998882
+    },
+    {
+      "model_name": "gemini-2.5-flash-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-2.5-flash-official.webp",
+      "quota_type": 0,
+      "model_ratio": 0.12,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 8.3333,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 45,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gemini-3.5-flash",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3.5-flash.png",
+      "quota_type": 0,
+      "model_ratio": 0.15,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "vip",
+        "svip",
+        "default"
+      ],
+      "supported_endpoint_types": [
+        "image-generation",
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 46,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "kling-v3",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/kling-v3.mp4",
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.06,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 47,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "claude-fable-5-1",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/claude-fable-5-1.png",
+      "vendor_id": 17,
+      "quota_type": 0,
+      "model_ratio": 1.5,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 5,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "anthropic",
+        "openai"
+      ],
+      "popularity_rank": 48,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "MiniMax-M2.5",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/MiniMax-M2.5.png",
+      "quota_type": 0,
+      "model_ratio": 0.105,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 4,
+      "enable_groups": [
+        "vip",
+        "default",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 49,
+      "created_time": 1782456041
+    },
+    {
+      "model_name": "nano_banana_2",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/nano-banana-2.png",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.03,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "svip",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation",
+        "openai-video"
+      ],
+      "popularity_rank": 50,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "kimi-k3",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/kimi-k3.png",
+      "vendor_id": 21,
+      "quota_type": 0,
+      "model_ratio": 1.05,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 5,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 51,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "nano_banana",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/nano-banana.png",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.012,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "svip",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation",
+        "openai-video"
+      ],
+      "popularity_rank": 52,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gpt-image-2.5-sunburst-vip",
+      "model_type": 2,
+      "vendor_id": 15,
+      "quota_type": 0,
+      "model_ratio": 2,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation",
+        "openai",
+        "openai-video"
+      ],
+      "popularity_rank": 53
+    },
+    {
+      "model_name": "gemini-3.1-flash-image-official",
+      "model_type": 2,
+      "description": "Gemini 3.1 Flash Image Official",
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3.1-flash-image-official.png",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.0536,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation"
+      ],
+      "popularity_rank": 54,
+      "created_time": 1786470812
+    },
+    {
+      "model_name": "claude-haiku-4-5",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/claude-haiku-4-5.png",
+      "quota_type": 0,
+      "model_ratio": 0.15,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 5,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "anthropic",
+        "openai"
+      ],
+      "popularity_rank": 55,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gpt-image-2.5-flare-vip",
+      "model_type": 2,
+      "vendor_id": 15,
+      "quota_type": 0,
+      "model_ratio": 2,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation",
+        "openai",
+        "openai-video"
+      ],
+      "popularity_rank": 56
+    },
+    {
+      "model_name": "grok-video-1.0",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/grok-video-1.0.mp4",
+      "vendor_id": 25,
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.01,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 57,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "claude-opus-5",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/claude-opus-5.png",
+      "vendor_id": 17,
+      "quota_type": 0,
+      "model_ratio": 0.75,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 5,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "anthropic",
+        "openai"
+      ],
+      "popularity_rank": 58,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "wan3.0-video",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/wan3.0-video.mp4",
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.12,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai",
+        "openai-video"
+      ],
+      "popularity_rank": 59,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "gemini-3.1-pro",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3.1-pro.webp",
+      "quota_type": 0,
+      "model_ratio": 0.2,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation",
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 60,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "claude-sonnet-5",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/claude-sonnet-5.png",
+      "vendor_id": 17,
+      "quota_type": 0,
+      "model_ratio": 0.45,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 5,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "anthropic",
+        "openai"
+      ],
+      "popularity_rank": 61,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "glm-5.3",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/glm-5.3.png",
+      "vendor_id": 20,
+      "quota_type": 0,
+      "model_ratio": 0.49,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 3.15,
+      "enable_groups": [
+        "vip",
+        "svip",
+        "default"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 62,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "gemini-3-flash-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3-flash.webp",
+      "quota_type": 0,
+      "model_ratio": 0.2,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 63,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "happyhorse-1.1",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/happyhorse-1.1.mp4",
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.085714,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "vip",
+        "svip",
+        "default"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 64,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "MiniMax-H3",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/MiniMax-H3.mp4",
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.13,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "vip",
+        "default",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 65,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "flux-2-pro",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/flux-2-pro.jpg",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.025,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "vip",
+        "svip",
+        "default"
+      ],
+      "supported_endpoint_types": [
+        "image-generation",
+        "openai-video"
+      ],
+      "popularity_rank": 66,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gpt-5.4-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gpt-5.4-official.png",
+      "quota_type": 0,
+      "model_ratio": 1,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 67,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "qwen-image-3.0-pro",
+      "model_type": 2,
+      "description": "Qwen Image 3.0 Pro",
+      "icon": "Qwen.Color",
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/qwen-image-3.0-pro.png",
+      "tags": "image,qwen-image",
+      "vendor_id": 14,
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.028,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation"
+      ],
+      "popularity_rank": 68,
+      "created_time": 1786526834
+    },
+    {
+      "model_name": "kling-3.0-turbo",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/kling-3.0-turbo.mp4",
+      "vendor_id": 18,
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.08,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "vip",
+        "svip",
+        "default"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 69,
+      "created_time": 1782456041
+    },
+    {
+      "model_name": "doubao-seedream-4-0",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/doubao-seedream-4-0.jpg",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.0285,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation",
+        "openai-video"
+      ],
+      "popularity_rank": 70,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "qwen-image-3.0",
+      "model_type": 2,
+      "description": "Qwen Image 3.0",
+      "icon": "Qwen.Color",
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/qwen-image-3.0.png",
+      "tags": "image,qwen-image",
+      "vendor_id": 14,
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.021,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation"
+      ],
+      "popularity_rank": 71,
+      "created_time": 1786526834
+    },
+    {
+      "model_name": "gemini-3-pro-image-official",
+      "model_type": 2,
+      "description": "Gemini 3 Pro Image Official",
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3-pro-image-official.png",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.1072,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation"
+      ],
+      "popularity_rank": 72,
+      "created_time": 1786470812
+    },
+    {
+      "model_name": "doubao-seedream-4-5",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/doubao-seedream-4-5.jpg",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.0357,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation",
+        "openai-video"
+      ],
+      "popularity_rank": 73,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "sora-2-official",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/sora-2-official.png",
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.08,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "svip",
+        "vip",
+        "default"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 74,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "kling-v3-omni",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/kling-v3-omni.mp4",
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.06,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 75,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "kling-v2-6",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/kling-v2-6.mp4",
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.0322,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 76,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gemini-3.1-pro-preview-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3.1-pro-preview-official.webp",
+      "quota_type": 0,
+      "model_ratio": 0.8,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 77,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "doubao-seedance-1-0-pro-fast",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/doubao-seedance-1-0-pro-fast.mp4",
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.0416,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 78,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "flux-kontext-max",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/flux-kontext-max.webp",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.04,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation",
+        "openai-video"
+      ],
+      "popularity_rank": 79,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "claude-fable-5",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/claude-fable-5.png",
+      "vendor_id": 17,
+      "quota_type": 0,
+      "model_ratio": 1.5,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 5,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "anthropic",
+        "openai"
+      ],
+      "popularity_rank": 80,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "kimi-k2.6",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/kimi-k2.6.png",
+      "quota_type": 0,
+      "model_ratio": 0.325325,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 4.1538,
+      "enable_groups": [
+        "svip",
+        "vip",
+        "default"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 81,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gemini-3.8-flash-official",
+      "model_type": 1,
+      "description": "Google 官方文本模型. 常规参考价八折.",
+      "vendor_id": 16,
+      "quota_type": 0,
+      "model_ratio": 0.6,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 5,
+      "enable_groups": [
+        "vip",
+        "default",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 82,
+      "created_time": 1789060778
+    },
+    {
+      "model_name": "gemini-2.5-pro-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-2.5-pro-official.webp",
+      "quota_type": 0,
+      "model_ratio": 0.5,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 8,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 83,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "glm-5.2",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/glm-5.2.webp",
+      "vendor_id": 20,
+      "quota_type": 0,
+      "model_ratio": 0.4004,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 3.5,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 84,
+      "created_time": 1782456041
+    },
+    {
+      "model_name": "gemini-3-pro-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3-pro-official.png",
+      "quota_type": 0,
+      "model_ratio": 0.8,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 85,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gemini-2.5-flash-image-official",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-2.5-flash-image-official.png",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.0488,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "vip",
+        "svip",
+        "default"
+      ],
+      "supported_endpoint_types": [
+        "image-generation"
+      ],
+      "popularity_rank": 86,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gpt-5.3-codex-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gpt-5.3-codex-official.png",
+      "quota_type": 0,
+      "model_ratio": 0.7,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 8,
+      "enable_groups": [
+        "vip",
+        "svip",
+        "default"
+      ],
+      "supported_endpoint_types": [
+        "openai-response",
+        "openai"
+      ],
+      "popularity_rank": 86,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gpt-5.6-terra-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gpt-5.6-terra-official.png",
+      "vendor_id": 15,
+      "quota_type": 0,
+      "model_ratio": 0.875,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 86,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "Veo3.1-lite-official",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/Veo3.1-lite-official.mp4",
+      "vendor_id": 15,
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.024,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 87,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "flux-kontext-pro",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/flux-kontext-pro.webp",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.02,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation",
+        "openai-video"
+      ],
+      "popularity_rank": 88,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "veo3.1-lite",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/veo3.1-lite.mp4",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.2,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 89,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "claude-opus-4-8",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/claude-opus-4-8.png",
+      "quota_type": 0,
+      "model_ratio": 0.75,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 5,
+      "enable_groups": [
+        "vip",
+        "svip",
+        "default"
+      ],
+      "supported_endpoint_types": [
+        "anthropic",
+        "openai"
+      ],
+      "popularity_rank": 90,
+      "created_time": 1779998882
+    },
+    {
+      "model_name": "gpt-5-pro-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gpt-5-pro-official.png",
+      "quota_type": 0,
+      "model_ratio": 6,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 8,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-response",
+        "openai"
+      ],
+      "popularity_rank": 91,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "claude-sonnet-4-6",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/claude-sonnet-4.6.png",
+      "quota_type": 0,
+      "model_ratio": 0.45,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 5,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "anthropic",
+        "openai"
+      ],
+      "popularity_rank": 92,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gemini-3.1-flash-lite-image-official",
+      "model_type": 2,
+      "description": "Gemini 3.1 Flash Lite Image Official",
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3.1-flash-lite-image-official.png",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.0272,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation"
+      ],
+      "popularity_rank": 93,
+      "created_time": 1786470812
+    },
+    {
+      "model_name": "claude-opus-4-7",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/claude-opus-4.7.jpg",
+      "quota_type": 0,
+      "model_ratio": 0.75,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 5,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "anthropic",
+        "openai"
+      ],
+      "popularity_rank": 94,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "glm-5",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/glm-5.avif",
+      "quota_type": 0,
+      "model_ratio": 0.2,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 4.5,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 95,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "glm-5.1",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/glm-5.1.webp",
+      "quota_type": 0,
+      "model_ratio": 0.3003,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 4,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 95,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "viduq3-turbo",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/viduq3-turbo.mp4",
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.042857,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 95,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "wan2.6-flash",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/wan2.6-flash.mp4",
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.03,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai",
+        "openai-video"
+      ],
+      "popularity_rank": 95,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "kimi-k2.5",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/kimi-k2.5.png",
+      "quota_type": 0,
+      "model_ratio": 0.2,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 5.25,
+      "enable_groups": [
+        "default",
+        "svip",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 96,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gemini-3.1-flash-lite-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3.1-flash-lite-official.png",
+      "vendor_id": 16,
+      "quota_type": 0,
+      "model_ratio": 0.1,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 97,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "gemini-3.6-flash-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3.6-flash-official.png",
+      "vendor_id": 16,
+      "quota_type": 0,
+      "model_ratio": 0.6,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 5,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 97,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "gemini-omni-flash-preview-official",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-omni-flash-preview-official.mp4",
+      "vendor_id": 16,
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.08,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 97,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "qwen3.5-plus",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/qwen3.5-plus.png",
+      "quota_type": 0,
+      "model_ratio": 0.2,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 97,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "viduq3-pro",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/viduq3-pro.mp4",
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.071429,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 97,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "flux-2-flex",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/flux-2-flex.webp",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.07,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation",
+        "openai-video"
+      ],
+      "popularity_rank": 98,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gemini-2.0-flash-lite-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-2.0-flash-lite-official.webp",
+      "quota_type": 0,
+      "model_ratio": 0.03,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 4,
+      "enable_groups": [
+        "vip",
+        "svip",
+        "default"
+      ],
+      "supported_endpoint_types": [
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 98,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gemini-2.0-flash-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-2.0-flash-official.webp",
+      "quota_type": 0,
+      "model_ratio": 0.06,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 4,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 98,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gemini-3-pro-preview-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3-pro-preview-official.png",
+      "quota_type": 0,
+      "model_ratio": 0.8,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "vip",
+        "svip",
+        "default"
+      ],
+      "supported_endpoint_types": [
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 98,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gemini-3.5-flash-lite-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3.5-flash-lite-official.png",
+      "vendor_id": 16,
+      "quota_type": 0,
+      "model_ratio": 0.12,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 8.3333,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 98,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "gemini-3.5-flash-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3.5-flash-official.png",
+      "vendor_id": 16,
+      "quota_type": 0,
+      "model_ratio": 0.6,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 98,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "gemini-3.7-flash-official",
+      "model_type": 1,
+      "description": "Google 官方文本模型. 常规参考价八折.",
+      "vendor_id": 16,
+      "quota_type": 0,
+      "model_ratio": 0.6,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 5,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 98,
+      "created_time": 1789060778
+    },
+    {
+      "model_name": "Veo3.1-fast-official",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/veo3.1-fast-official.mp4",
+      "vendor_id": 15,
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.08,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 99,
+      "created_time": 1782456041
+    },
+    {
+      "model_name": "gemini-omni-1.1-flash-preview-official",
+      "model_type": 3,
+      "description": "Google 官方预览视频模型. 输入视频逐个向上取整为秒, 与输出视频分别计费.",
+      "vendor_id": 16,
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.081088,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "vip",
+        "default",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 99,
+      "created_time": 1789060778
+    },
+    {
+      "model_name": "viduq3",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/viduq3.mp4",
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.042857,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 100,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "wan2.6",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/wan2.6.mp4",
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.06,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai",
+        "openai-video"
+      ],
+      "popularity_rank": 100,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "MiniMax-Hailuo-02",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/MiniMax-Hailuo-02.mp4",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.194,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 101,
+      "created_time": 1782456041
+    },
+    {
+      "model_name": "MiniMax-Hailuo-2.3-Fast",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/MiniMax-Hailuo-2.3-Fast.mp4",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.136,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 101,
+      "created_time": 1782456041
+    },
+    {
+      "model_name": "Veo3.1-quality-official",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/Veo3.1-quality-official.mp4",
+      "vendor_id": 15,
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.32,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 101,
+      "created_time": 1782456041
+    },
+    {
+      "model_name": "kling-video-o1",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/kling-video-o1.mp4",
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.06,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 101,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "wan3.0-video-prime",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/wan3.0-video-prime.mp4",
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.18,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai",
+        "openai-video"
+      ],
+      "popularity_rank": 101,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "MiniMax-Hailuo-2.3",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/MiniMax-Hailuo-2.3.mp4",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.194,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 102,
+      "created_time": 1782456041
+    },
+    {
+      "model_name": "doubao-seedance-1-0-pro-quality",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/doubao-seedance-1-0-pro-quality.webp",
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.104,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 102,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "vidu-image",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/vidu-image.png",
+      "vendor_id": 19,
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.066964,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation"
+      ],
+      "popularity_rank": 102,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "viduq2-pro",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/viduq2-pro.png",
+      "vendor_id": 19,
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.100446,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation"
+      ],
+      "popularity_rank": 102,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "MiniMax-H3-Max",
+      "model_type": 3,
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.05,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1789429541
+    },
+    {
+      "model_name": "MiniMax-H3-Max-Turbo",
+      "model_type": 3,
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.025,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1789429541
+    },
+    {
+      "model_name": "claude-haiku-4.5",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/claude-haiku-4.5.png",
+      "vendor_id": 17,
+      "quota_type": 0,
+      "model_ratio": 0,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 0,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "anthropic",
+        "openai"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "claude-opus-4.8",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/claude-opus-4.8.png",
+      "vendor_id": 17,
+      "quota_type": 0,
+      "model_ratio": 0,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 0,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "anthropic",
+        "openai"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "deepseek-v3.2",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/deepseek-v3.2.webp",
+      "quota_type": 0,
+      "model_ratio": 0.1,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 4,
+      "enable_groups": [
+        "vip",
+        "default",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "doubao-seedance-1-5-pro",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/doubao-seedance-1-5-pro.mp4",
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.044,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gemini-2.5-flash-image-preview-vip",
+      "model_type": 2,
+      "vendor_id": 16,
+      "quota_type": 0,
+      "model_ratio": 0,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 0,
+      "enable_groups": [
+        "default",
+        "svip",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation"
+      ],
+      "popularity_rank": 103
+    },
+    {
+      "model_name": "gemini-3-flash-preview-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3-flash-preview-official.webp",
+      "quota_type": 0,
+      "model_ratio": 0,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 0,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gemini-3.1-flash-lite-preview-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3.1-flash-lite-preview-official.webp",
+      "quota_type": 0,
+      "model_ratio": 0.1,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gemini-3.5-flash-lite",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3.5-flash-lite.png",
+      "vendor_id": 16,
+      "quota_type": 0,
+      "model_ratio": 0,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 0,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "gemini",
+        "openai"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "gemini-3.5-thinking",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini-3.5-thinking.webp",
+      "quota_type": 0,
+      "model_ratio": 0.225,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gemini_omni",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gemini_omni.mp4",
+      "vendor_id": 16,
+      "quota_type": 0,
+      "model_ratio": 0,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 0,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1782456041
+    },
+    {
+      "model_name": "gpt-4o-image",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gpt-4o-image.webp",
+      "quota_type": 0,
+      "model_ratio": 0,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 0,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": null,
+      "popularity_rank": 103,
+      "created_time": 1779204907
+    },
+    {
+      "model_name": "gpt-5.4-pro-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gpt-5.4-pro-official.png",
+      "quota_type": 0,
+      "model_ratio": 12,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 6,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "gpt-5.6-luna",
+      "model_type": 1,
+      "vendor_id": 15,
+      "quota_type": 0,
+      "model_ratio": 0,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 0,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 103
+    },
+    {
+      "model_name": "gpt-audio-1.5-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gpt-audio-1.5-official.png",
+      "quota_type": 0,
+      "model_ratio": 1,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 4,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1779940371
+    },
+    {
+      "model_name": "gpt-realtime-1.5-official",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/gpt-realtime-1.5-official.png",
+      "quota_type": 0,
+      "model_ratio": 1.6,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 4,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1779940371
+    },
+    {
+      "model_name": "grok-imagine-1.0",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/grok-imagine-1.0.png",
+      "vendor_id": 25,
+      "quota_type": 0,
+      "model_ratio": 0,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 0,
+      "enable_groups": [
+        "svip",
+        "vip",
+        "default"
+      ],
+      "supported_endpoint_types": [
+        "image-generation",
+        "openai-video"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "grok-imagine-1.0-edit",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/grok-imagine-1.0-edit.png",
+      "vendor_id": 25,
+      "quota_type": 0,
+      "model_ratio": 0,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 0,
+      "enable_groups": [
+        "default",
+        "svip",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation",
+        "openai-video"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "qwen3.6-plus",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/qwen3.6-plus.png",
+      "vendor_id": 14,
+      "quota_type": 0,
+      "model_ratio": 0,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 0,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1782456041
+    },
+    {
+      "model_name": "qwen3.7-flash",
+      "model_type": 1,
+      "vendor_id": 14,
+      "quota_type": 0,
+      "model_ratio": 0,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 0,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 103
+    },
+    {
+      "model_name": "qwen3.7-max",
+      "model_type": 1,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/qwen3.7-max.png",
+      "vendor_id": 14,
+      "quota_type": 0,
+      "model_ratio": 0,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 0,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1782456041
+    },
+    {
+      "model_name": "qwen3.7-plus",
+      "model_type": 1,
+      "vendor_id": 14,
+      "quota_type": 0,
+      "model_ratio": 0,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 0,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 103
+    },
+    {
+      "model_name": "qwen3.8-max",
+      "model_type": 1,
+      "vendor_id": 14,
+      "quota_type": 0,
+      "model_ratio": 0,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 0,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai"
+      ],
+      "popularity_rank": 103
+    },
+    {
+      "model_name": "seedance-2-ext",
+      "model_type": 3,
+      "quota_type": 0,
+      "model_ratio": 0,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 0,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 103
+    },
+    {
+      "model_name": "seedance-2-fast-ext",
+      "model_type": 3,
+      "quota_type": 0,
+      "model_ratio": 0,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 0,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 103
+    },
+    {
+      "model_name": "seedance-2.5-ext",
+      "model_type": 3,
+      "quota_type": 0,
+      "model_ratio": 0,
+      "model_price": 0,
+      "owner_by": "",
+      "completion_ratio": 0,
+      "enable_groups": [
+        "vip",
+        "svip",
+        "default"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 103
+    },
+    {
+      "model_name": "veo3.1-fast",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/veo3.1-fast.mp4",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.1,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "veo3.1-quality",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/veo3.1-quality.mp4",
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.3,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "svip",
+        "default",
+        "vip"
+      ],
+      "supported_endpoint_types": [
+        "openai-video"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1779940146
+    },
+    {
+      "model_name": "viduq2-fast",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/viduq2-fast.png",
+      "vendor_id": 19,
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.030134,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "viduq3-ad",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/viduq3-ad.mp4",
+      "vendor_id": 19,
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.075,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai",
+        "openai-video"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "viduq3-drama",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/viduq3-drama.mp4",
+      "vendor_id": 19,
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.0875,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai",
+        "openai-video"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "viduq3-fast",
+      "model_type": 2,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/viduq3-fast.png",
+      "vendor_id": 19,
+      "quota_type": 1,
+      "model_ratio": 0,
+      "model_price": 0.050223,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "image-generation"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "viduq3-mix",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/viduq3-mix.mp4",
+      "vendor_id": 19,
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.078125,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai",
+        "openai-video"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1788749358
+    },
+    {
+      "model_name": "viduq3-pro-fast",
+      "model_type": 3,
+      "cover_thumb_url": "https://model-files.toapis.com/model-covers/viduq3-pro-fast.mp4",
+      "vendor_id": 19,
+      "quota_type": 2,
+      "model_ratio": 0,
+      "model_price": 0.0375,
+      "owner_by": "",
+      "completion_ratio": 1,
+      "enable_groups": [
+        "default",
+        "vip",
+        "svip"
+      ],
+      "supported_endpoint_types": [
+        "openai",
+        "openai-video"
+      ],
+      "popularity_rank": 103,
+      "created_time": 1788749358
+    }
+  ],
+  "group_ratio": {
+    "default": 1,
+    "svip": 1,
+    "vip": 1
+  },
+  "success": true,
+  "supported_endpoint": {
+    "anthropic": {
+      "path": "/v1/messages",
+      "method": "POST"
+    },
+    "gemini": {
+      "path": "/v1beta/models/{model}:generateContent",
+      "method": "POST"
+    },
+    "image-generation": {
+      "path": "/v1/images/generations",
+      "method": "POST"
+    },
+    "openai": {
+      "path": "/v1/chat/completions",
+      "method": "POST"
+    },
+    "openai-response": {
+      "path": "/v1/responses",
+      "method": "POST"
+    },
+    "openai-video": {
+      "path": "/v1/videos/generations",
+      "method": "POST"
+    }
+  },
+  "usable_group": {
+    "default": "默认分组",
+    "svip": "svip分组",
+    "vip": "vip分组"
+  },
+  "vendors": [
+    {
+      "id": 16,
+      "name": "Google",
+      "icon": "Gemini.Color"
+    },
+    {
+      "id": 17,
+      "name": "Anthropic",
+      "icon": "Claude.Color"
+    },
+    {
+      "id": 21,
+      "name": "Moonshot",
+      "icon": "Moonshot"
+    },
+    {
+      "id": 22,
+      "name": "DeepSeek",
+      "icon": "DeepSeek.Color"
+    },
+    {
+      "id": 25,
+      "name": "xAI",
+      "icon": "XAI"
+    },
+    {
+      "id": 12,
+      "name": "字节跳动",
+      "icon": "Doubao.Color"
+    },
+    {
+      "id": 14,
+      "name": "阿里巴巴",
+      "icon": "Qwen.Color"
+    },
+    {
+      "id": 18,
+      "name": "快手",
+      "icon": "Kling.Color"
+    },
+    {
+      "id": 19,
+      "name": "Vidu",
+      "icon": "Vidu"
+    },
+    {
+      "id": 15,
+      "name": "OpenAI",
+      "icon": "OpenAI"
+    },
+    {
+      "id": 20,
+      "name": "智谱",
+      "icon": "Zhipu.Color"
+    }
+  ]
+}

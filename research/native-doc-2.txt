@@ -1,0 +1,194 @@
+> ## Documentation Index
+> Fetch the complete documentation index at: https://docs.toapis.com/llms.txt
+> Use this file to discover all available pages before exploring further.
+
+# GPT-Image-2.5 图像生成
+
+> gpt-image-2.5-flare 和 gpt-image-2.5-sunburst 普通版接入指南, 包含异步任务, 参考图, 透明背景, 固定 high 质量和按分辨率计价
+
+普通版通过 `POST /v1/images/generations` 创建图片任务, 返回任务 ID. 任务完成后通过查询接口获取图片 URL. 两个模型使用相同的请求格式:
+
+| 模型       | 请求中的 model               |
+| -------- | ------------------------ |
+| Flare    | `gpt-image-2.5-flare`    |
+| Sunburst | `gpt-image-2.5-sunburst` |
+
+`gpt-image-2.5` 是系列名称. 调用时请填写表中的完整模型名.
+
+<Note>
+  本文介绍普通版. 需要按实际 token 计费时, 请使用独立的 [GPT-Image-2.5 VIP 文档](../gpt-image-2.5-vip/generation). 两版都使用异步任务, 主要区别在 size 格式和计价方式.
+</Note>
+
+中国大陆用户可将示例中的 `https://api.toapis.com` 替换为 `https://api.toapis.cn`. API Key 可在 [控制台](https://toapis.com/dashboard) 创建.
+
+## 快速开始
+
+将自己的 ToAPIs API Key 设置为环境变量 `TOAPIS_API_KEY`, 提交任务:
+
+```bash theme={null}
+curl --fail-with-body --request POST \
+  --url https://api.toapis.com/v1/images/generations \
+  --header "Authorization: Bearer $TOAPIS_API_KEY" \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "model": "gpt-image-2.5-flare",
+    "prompt": "儿童绘本风格, 一位兽医用听诊器给小水獭检查心跳",
+    "quality": "high",
+    "size": "1:1",
+    "resolution": "1K",
+    "n": 1
+  }'
+```
+
+提交响应示例:
+
+```json theme={null}
+{
+  "id": "tsk_img_example",
+  "object": "generation.task",
+  "model": "gpt-image-2.5-flare",
+  "status": "pending",
+  "progress": 0,
+  "created_at": 1788951900,
+  "metadata": {}
+}
+```
+
+保存返回的 `id`, 将下方的 `TASK_ID` 替换为该值后查询:
+
+```bash theme={null}
+curl --fail-with-body \
+  --url https://api.toapis.com/v1/images/generations/TASK_ID \
+  --header "Authorization: Bearer $TOAPIS_API_KEY"
+```
+
+任务可能经过 `pending`, `queued`, `in_progress`, 最终进入 `completed` 或 `failed`. `completed` 时从 `result.data` 读取图片 URL, `failed` 时读取 `error`. 建议每隔数秒查询一次. 完整字段见 [图片任务状态接口](../../tasks/image-status).
+
+提交成功表示任务已创建. 请等到 `completed` 后再下载图片; 等待期间继续查询同一个任务 ID.
+
+## 请求参数
+
+<ParamField header="Authorization" type="string" required>
+  使用 `Bearer YOUR_TOAPIS_API_KEY` 认证.
+</ParamField>
+
+<ParamField body="model" type="string" required>
+  `gpt-image-2.5-flare` 或 `gpt-image-2.5-sunburst`.
+</ParamField>
+
+<ParamField body="prompt" type="string" required>
+  图片描述. 使用参考图时, 描述需要保留的主体和需要修改的内容.
+</ParamField>
+
+<ParamField body="quality" type="string" default="high">
+  当前普通版固定使用 `high`, 可省略此参数. 传入其他字符串值会被忽略, 统一使用 `high`. Playground 不展示质量选项.
+
+  当前普通版按 resolution 定价.
+</ParamField>
+
+<ParamField body="size" type="string" default="1:1">
+  画面比例, 例如 `1:1`, `3:2`, `2:3`, `4:3`, `3:4`, `5:4`, `4:5`, `16:9`, `9:16`, `21:9`.
+
+  推荐使用比例并显式填写 resolution. 服务端根据二者计算输出像素尺寸. 普通版的比例写法与 VIP 版的像素尺寸写法不同.
+</ParamField>
+
+<ParamField body="resolution" type="string" default="1K">
+  分辨率档位, 支持 `1K`, `2K`, `4K`, 也接受小写形式. 该字段决定普通版的计价档位.
+</ParamField>
+
+<ParamField body="background" type="string">
+  可选的背景参数. 传入 `"transparent"` 生成透明背景图片, 不传此参数时正常生图.
+
+  文生图和带 `reference_images` 的图生图均可使用. 普通生图请直接省略此字段.
+</ParamField>
+
+<ParamField body="n" type="integer" default={1}>
+  每次请求使用 `1`, 生成一张图片.
+</ParamField>
+
+<ParamField body="reference_images" type="string[]">
+  可选的参考图 URL 列表, 用于图生图. 图片地址需要能被服务端访问. 本接口只支持图片 URL, 不支持本地文件上传或 base64; 本地图片请先通过 [上传图片接口](../../uploads/images) 获取 URL.
+
+  也兼容 `image_urls`. 选择其中一个字段即可.
+</ParamField>
+
+## 透明背景
+
+生成请求中加入 `"background": "transparent"` 即可得到透明背景的图片. 不传该字段时正常生图.
+
+```bash theme={null}
+curl --fail-with-body --request POST \
+  --url https://api.toapis.com/v1/images/generations \
+  --header "Authorization: Bearer $TOAPIS_API_KEY" \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "model": "gpt-image-2.5-flare",
+    "prompt": "一个红色圆形贴纸, 背景透明",
+    "quality": "high",
+    "size": "1:1",
+    "resolution": "1K",
+    "background": "transparent",
+    "n": 1
+  }'
+```
+
+提交后同样通过任务 ID 查询, 从 `result.data` 读取图片 URL.
+
+## 比例和分辨率示例
+
+| size   | 1K          | 2K          | 4K          |
+| ------ | ----------- | ----------- | ----------- |
+| `1:1`  | `1024x1024` | `2048x2048` | `2880x2880` |
+| `3:2`  | `1536x1024` | `2048x1360` | `3520x2336` |
+| `2:3`  | `1024x1536` | `1360x2048` | `2336x3520` |
+| `16:9` | `1536x864`  | `2048x1152` | `3840x2160` |
+| `9:16` | `864x1536`  | `1152x2048` | `2160x3840` |
+
+`4K` 表示分辨率档位, 实际长宽取决于画面比例, 例如正方形 4K 输出为 `2880x2880`.
+
+## 参考图生成
+
+使用同一个生成接口, 增加 `reference_images`. 下例使用 Sunburst, 返回值仍然是异步任务:
+
+```bash theme={null}
+curl --fail-with-body --request POST \
+  --url https://api.toapis.com/v1/images/generations \
+  --header "Authorization: Bearer $TOAPIS_API_KEY" \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "model": "gpt-image-2.5-sunburst",
+    "prompt": "保留参考图中的小水獭和兽医, 给小水獭增加一条黄色围巾",
+    "reference_images": ["https://example.com/otter.png"],
+    "quality": "high",
+    "size": "1:1",
+    "resolution": "2K",
+    "n": 1
+  }'
+```
+
+将 `https://example.com/otter.png` 替换为自己的参考图 URL, 然后使用返回的任务 ID 查询结果.
+
+## 价格
+
+以下为 2026-09-09 核对的标准价格, 每次生成一张图片, 两个普通版模型价格相同:
+
+| resolution | USD/张 |
+| ---------- | ----: |
+| 1K         | 0.015 |
+| 2K         | 0.020 |
+| 4K         | 0.025 |
+
+这三个价格均适用于 `low`, `medium`, `high`, `xhigh`, `max`. 当前参考图输入没有额外的按张费用. 账户专属定价或折扣可能不同, 最新价格以 [模型定价页](https://toapis.com/pricing) 和账户实际配置为准.
+
+## 与 VIP 版的区别
+
+| 项目         | 普通版                    | VIP 版                  |
+| ---------- | ---------------------- | ---------------------- |
+| 模型名        | 不带 `-vip`              | 带 `-vip`               |
+| 任务模式       | 异步任务, 通过任务 ID 查询图片 URL | 异步任务, 通过任务 ID 查询图片 URL |
+| size       | 推荐比例, 如 `16:9`         | 像素尺寸, 如 `1536x1024`    |
+| resolution | `1K`, `2K`, `4K`       | 省略, 由 size 表达尺寸        |
+| 计费         | 按 resolution 对应的每张价格   | 按实际文本和图片 token         |
+| 参考图        | 生成接口中填写参考图 URL         | 编辑接口上传图片文件             |
+
+切换到 VIP 时, 请同时调整模型名和参数. 详见 [GPT-Image-2.5 VIP](../gpt-image-2.5-vip/generation).

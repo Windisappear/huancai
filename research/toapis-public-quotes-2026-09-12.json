@@ -1,0 +1,243 @@
+[
+  {
+    "data": [
+      {
+        "key": "gemini-3.1-flash-image-preview-1K",
+        "success": true,
+        "data": {
+          "model": "gemini-3.1-flash-image-preview",
+          "model_name": "gemini-3.1-flash-image-preview",
+          "charge_type": "per_request",
+          "unit_price": 0.025,
+          "estimated_price": 0.025,
+          "display_price": "$0.0250",
+          "estimated_price_type": "normal"
+        }
+      },
+      {
+        "key": "gemini-3.1-flash-image-preview-2K",
+        "success": true,
+        "data": {
+          "model": "gemini-3.1-flash-image-preview",
+          "model_name": "gemini-3.1-flash-image-preview",
+          "charge_type": "per_request",
+          "unit_price": 0.03,
+          "estimated_price": 0.03,
+          "display_price": "$0.0300",
+          "estimated_price_type": "normal"
+        }
+      },
+      {
+        "key": "gemini-3.1-flash-image-preview-4K",
+        "success": true,
+        "data": {
+          "model": "gemini-3.1-flash-image-preview",
+          "model_name": "gemini-3.1-flash-image-preview",
+          "charge_type": "per_request",
+          "unit_price": 0.04,
+          "estimated_price": 0.04,
+          "display_price": "$0.0400",
+          "estimated_price_type": "normal"
+        }
+      },
+      {
+        "key": "gemini-3-pro-image-preview-1K",
+        "success": true,
+        "data": {
+          "model": "gemini-3-pro-image-preview",
+          "model_name": "gemini-3-pro-image-preview",
+          "charge_type": "per_request",
+          "unit_price": 0.04,
+          "estimated_price": 0.04,
+          "display_price": "$0.0400",
+          "estimated_price_type": "normal"
+        }
+      },
+      {
+        "key": "gemini-3-pro-image-preview-2K",
+        "success": true,
+        "data": {
+          "model": "gemini-3-pro-image-preview",
+          "model_name": "gemini-3-pro-image-preview",
+          "charge_type": "per_request",
+          "unit_price": 0.05,
+          "estimated_price": 0.05,
+          "display_price": "$0.0500",
+          "estimated_price_type": "normal"
+        }
+      },
+      {
+        "key": "gemini-3-pro-image-preview-4K",
+        "success": true,
+        "data": {
+          "model": "gemini-3-pro-image-preview",
+          "model_name": "gemini-3-pro-image-preview",
+          "charge_type": "per_request",
+          "unit_price": 0.06,
+          "estimated_price": 0.06,
+          "display_price": "$0.0600",
+          "estimated_price_type": "normal"
+        }
+      }
+    ],
+    "success": true
+  },
+  {
+    "data": [
+      {
+        "key": "gpt-image-2-1K",
+        "success": true,
+        "data": {
+          "model": "gpt-image-2",
+          "model_name": "gpt-image-2",
+          "charge_type": "per_request",
+          "unit_price": 0.015,
+          "estimated_price": 0.015,
+          "display_price": "$0.0150",
+          "estimated_price_type": "normal"
+        }
+      },
+      {
+        "key": "gpt-image-2-2K",
+        "success": true,
+        "data": {
+          "model": "gpt-image-2",
+          "model_name": "gpt-image-2",
+          "charge_type": "per_request",
+          "unit_price": 0.02,
+          "estimated_price": 0.02,
+          "display_price": "$0.0200",
+          "estimated_price_type": "normal"
+        }
+      },
+      {
+        "key": "gpt-image-2-4K",
+        "success": true,
+        "data": {
+          "model": "gpt-image-2",
+          "model_name": "gpt-image-2",
+          "charge_type": "per_request",
+          "unit_price": 0.025,
+          "estimated_price": 0.025,
+          "display_price": "$0.0250",
+          "estimated_price_type": "normal"
+        }
+      },
+      {
+        "key": "doubao-seedream-5-0-1K",
+        "success": true,
+        "data": {
+          "model": "doubao-seedream-5-0",
+          "model_name": "doubao-seedream-5-0",
+          "charge_type": "per_request",
+          "unit_price": 0.0315,
+          "estimated_price": 0.0315,
+          "display_price": "$0.0315",
+          "estimated_price_type": "normal"
+        }
+      },
+      {
+        "key": "doubao-seedream-5-0-2K",
+        "success": true,
+        "data": {
+          "model": "doubao-seedream-5-0",
+          "model_name": "doubao-seedream-5-0",
+          "charge_type": "per_request",
+          "unit_price": 0.0315,
+          "estimated_price": 0.0315,
+          "display_price": "$0.0315",
+          "estimated_price_type": "normal"
+        }
+      },
+      {
+        "key": "doubao-seedream-5-0-4K",
+        "success": true,
+        "data": {
+          "model": "doubao-seedream-5-0",
+          "model_name": "doubao-seedream-5-0",
+          "charge_type": "per_request",
+          "unit_price": 0.0315,
+          "estimated_price": 0.0315,
+          "display_price": "$0.0315",
+          "estimated_price_type": "normal"
+        }
+      }
+    ],
+    "success": true
+  },
+  {
+    "data": [
+      {
+        "key": "doubao-seedream-5-0-pro-1K",
+        "success": true,
+        "data": {
+          "model": "doubao-seedream-5-0-pro",
+          "model_name": "doubao-seedream-5-0-pro",
+          "charge_type": "per_request",
+          "unit_price": 0.042857,
+          "estimated_price": 0.042857,
+          "display_price": "$0.0429",
+          "estimated_price_type": "normal"
+        }
+      },
+      {
+        "key": "doubao-seedream-5-0-pro-2K",
+        "success": true,
+        "data": {
+          "model": "doubao-seedream-5-0-pro",
+          "model_name": "doubao-seedream-5-0-pro",
+          "charge_type": "per_request",
+          "unit_price": 0.085714,
+          "estimated_price": 0.085714,
+          "display_price": "$0.0857",
+          "estimated_price_type": "normal"
+        }
+      },
+      {
+        "key": "doubao-seedream-5-0-pro-4K",
+        "success": false,
+        "message": "pricing rule match failed: pricing rule not matched: no matching pricing rule for model_name: doubao-seedream-5-0-pro, params: map[input_image_count:1 resolution:4K]"
+      },
+      {
+        "key": "gpt-vip-low",
+        "success": true,
+        "data": {
+          "model": "gpt-image-2-vip",
+          "model_name": "gpt-image-2-vip",
+          "charge_type": "per_request",
+          "unit_price": 0.0019,
+          "estimated_price": 0.0019,
+          "display_price": "$0.0019",
+          "estimated_price_type": "normal"
+        }
+      },
+      {
+        "key": "gpt-vip-medium",
+        "success": true,
+        "data": {
+          "model": "gpt-image-2-vip",
+          "model_name": "gpt-image-2-vip",
+          "charge_type": "per_request",
+          "unit_price": 0.0169,
+          "estimated_price": 0.0169,
+          "display_price": "$0.0169",
+          "estimated_price_type": "normal"
+        }
+      },
+      {
+        "key": "gpt-vip-high",
+        "success": true,
+        "data": {
+          "model": "gpt-image-2-vip",
+          "model_name": "gpt-image-2-vip",
+          "charge_type": "per_request",
+          "unit_price": 0.0675,
+          "estimated_price": 0.0675,
+          "display_price": "$0.0675",
+          "estimated_price_type": "normal"
+        }
+      }
+    ],
+    "success": true
+  }
+]

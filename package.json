@@ -1,0 +1,56 @@
+{
+  "name": "frame-studio",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "dev:light": "node scripts/lightweight.mjs",
+    "test:light": "node scripts/lightweight.mjs --test",
+    "preview:light": "node scripts/lightweight.mjs --preview",
+    "test:e2e:light": "node scripts/lightweight.mjs --e2e",
+    "pool:check": "tsx scripts/pool-check.ts",
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "prisma generate && next build && node scripts/sanitize-build.mjs",
+    "start": "node scripts/start.mjs",
+    "worker": "tsx src/worker.ts",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate deploy",
+    "db:seed": "tsx prisma/seed.ts",
+    "test": "vitest run",
+    "test:integration": "vitest run --config vitest.integration.config.mts",
+    "test:e2e": "playwright test",
+    "typecheck": "tsc --noEmit",
+    "admin": "tsx scripts/admin.ts"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.922.0",
+    "@prisma/client": "6.19.3",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "argon2": "^0.44.0",
+    "bullmq": "^5.63.0",
+    "dotenv": "^17.2.3",
+    "ioredis": "^5.8.2",
+    "lucide-react": "^0.553.0",
+    "next": "16.3.4",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "sharp": "0.35.4",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.8",
+    "@electric-sql/pglite-socket": "0.2.11",
+    "@playwright/test": "^1.56.1",
+    "@tailwindcss/postcss": "^4.1.17",
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "prisma": "6.19.3",
+    "tailwindcss": "^4.1.17",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.11"
+  },
+  "overrides": {
+    "deepmerge-ts": "8.0.0"
+  }
+}

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#141619">
+  <meta name="description" content="幻彩 AI 图片创作工作台，支持 GPT Image、Nano Banana、Seedream 文生图与图生图，作品保存在当前浏览器。">
+  <meta name="referrer" content="no-referrer">
+  <title>幻彩 · AI 图片创作</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到创作区域</a>
+  <div class="app-shell">
+    <aside class="nav-rail" aria-label="主导航">
+      <a href="#studio" class="brand" aria-label="幻彩首页"><i data-icon="aperture"></i></a>
+      <nav>
+        <button class="nav-item active" data-page="studio" aria-current="page"><i data-icon="image-plus"></i><span>创作</span></button>
+        <button class="nav-item" data-page="history"><i data-icon="images"></i><span>图库</span></button>
+        <button class="nav-item" data-action="settings"><i data-icon="settings"></i><span>设置</span></button>
+      </nav>
+      <button class="nav-item help-button" data-action="help"><i data-icon="help"></i><span>帮助</span></button>
+      <div class="local-avatar" title="作品保存在当前浏览器"><i data-icon="hard-drive"></i></div>
+    </aside>
+    <div class="main-shell">
+      <header class="topbar">
+        <a class="wordmark" href="#studio">幻彩<span>HUANCAI STUDIO</span></a>
+        <div class="top-actions"><span class="local-label"><i data-icon="hard-drive"></i>本地创作空间</span><button class="connection-pill" data-action="settings"><i data-icon="key"></i><span id="connectionLabel">配置 API Key</span><i data-icon="arrow-up-right"></i></button></div>
+      </header>
+      <div id="storageAlert" class="service-banner" role="alert" hidden></div>
+      <main id="main">
+        <div id="studioPage" class="studio-layout">
+          <section class="control-panel" aria-labelledby="studioTitle">
+            <div class="panel-title"><h1 id="studioTitle">图片创作</h1><i data-icon="sliders"></i></div>
+            <form id="creationForm">
+              <fieldset id="creationFields">
+                <div class="segmented" aria-label="创作模式"><button type="button" data-mode="text" class="selected" aria-pressed="true"><i data-icon="sparkles"></i>文生图</button><button type="button" data-mode="reference" aria-pressed="false"><i data-icon="image-plus"></i>图生图</button></div>
+                <div class="field"><label>生成模型</label><div id="familyTabs" class="family-tabs"></div><label class="sr-only" for="model">模型版本</label><div class="select-wrap"><span class="model-symbol"><i data-icon="aperture"></i></span><select id="model"></select><i data-icon="chevron-down"></i></div><p class="model-note" id="modelNote"></p></div>
+                <div class="field" id="referenceField" hidden>
+                  <label for="referenceInput">参考图片 <span id="referenceCount">0 / 6</span></label>
+                  <div id="referenceList" class="reference-list"></div>
+                  <button type="button" class="upload-zone" id="uploadZone"><i data-icon="upload"></i><span>拖入图片，或点击上传</span><small>PNG、JPG、WebP · 每张 ≤ 10 MB</small></button>
+                  <input type="file" id="referenceInput" accept="image/png,image/jpeg,image/webp" multiple hidden>
+                  <p class="hint">支持粘贴图片；多图总大小不超过 20 MB。</p>
+                </div>
+                <div class="field"><label for="prompt">画面描述<button type="button" class="text-button" id="clearPrompt">清空</button></label><div class="prompt-wrap"><textarea id="prompt" maxlength="4000" required placeholder="描述你想看到的画面，试着加入主体、光线、构图和风格…"></textarea><span class="char-count" id="charCount">0 / 4000</span></div></div>
+                <div class="field"><label>画面比例<span id="sizeHint">1024 × 1024</span></label><div id="ratioOptions" class="size-options"></div></div>
+                <div class="field" id="qualityField"><label for="quality">生成质量</label><div class="select-wrap plain"><select id="quality"><option value="auto">自动 · 由模型决定</option><option value="low">草稿 · 更快生成</option><option value="medium">均衡 · 日常创作</option><option value="high">精细 · 更多细节</option></select><i data-icon="chevron-down"></i></div></div>
+                <div class="field" id="resolutionField" hidden><label for="resolution">清晰度</label><div class="select-wrap plain"><select id="resolution"><option value="1K">1K · 标准</option><option value="2K">2K · 高清</option><option value="4K">4K · 超清</option></select><i data-icon="chevron-down"></i></div><p class="hint" id="resolutionNote"></p></div>
+                <div class="field row between"><label>生成数量</label><div class="stepper"><button type="button" id="minusCount" aria-label="减少张数">−</button><output id="countValue">1</output><button type="button" id="plusCount" aria-label="增加张数">+</button></div></div>
+              </fieldset>
+              <div class="generate-area"><div class="price-row"><span id="batchHint">准备好，把想象变成画面</span><span id="batchCount">1 张</span></div><button type="submit" class="primary generate" id="generateButton"><i data-icon="sparkles"></i><span>开始生成</span><kbd>Ctrl ↵</kbd></button><button type="button" class="secondary full" id="cancelButton" hidden><i data-icon="square"></i>停止等待</button><p><i data-icon="hard-drive"></i>作品自动保存在当前浏览器</p><p class="billing-note">生成费用由你的中转站账户结算</p></div>
+            </form>
+          </section>
+          <section class="canvas-panel" aria-label="生成结果">
+            <div class="canvas-toolbar"><div class="row"><span class="canvas-label">创作画布</span><span class="soft-badge" id="canvasCount">等待灵感</span></div><button class="text-button" data-page="history">全部作品<i data-icon="arrow-up-right"></i></button></div>
+            <div id="generationError" class="inline-error" role="alert" hidden></div>
+            <div id="generationProgress" class="progress-panel" role="status" aria-live="polite" hidden></div>
+            <div id="emptyCanvas" class="empty-canvas">
+              <div class="canvas-frame"><span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span><div class="frame-mark"><i data-icon="aperture"></i></div><h2>让想象，在此显影</h2><p>一个想法，就是一张作品的开始</p><div class="frame-meta">GPT Image <span>·</span> Nano Banana <span>·</span> Seedream</div></div>
+              <div class="prompt-starters"><span>还没想好？从一份灵感开始</span><button data-prompt="一座临海的白色建筑，午后阳光投下几何阴影，蓝色海面，极简建筑摄影，安静而通透的氛围"><i data-icon="plus"></i>海边建筑 · 光影摄影</button><button data-prompt="一只漂浮在宇宙中的透明玻璃水母，体内有细小的星光，深蓝背景，细腻的 3D 质感，梦幻柔和的电影光线"><i data-icon="plus"></i>宇宙水母 · 梦幻 3D</button><button data-prompt="设计一张极简艺术展海报，标题为「看见另一种可能」，大幅留白，黑白字体与钴蓝色几何图形，精致现代排版"><i data-icon="plus"></i>艺术海报 · 中文排版</button></div>
+            </div>
+            <div id="results" class="results-grid" hidden></div>
+            <div class="canvas-bottom"><span><i data-icon="hard-drive"></i>仅在此浏览器保存</span><span>你的灵感，你的创作空间</span></div>
+          </section>
+        </div>
+        <section id="historyPage" class="page-content" aria-labelledby="historyTitle" hidden>
+          <div class="page-heading"><div><p class="eyebrow">YOUR CREATIVE ARCHIVE</p><h1 id="historyTitle">我的图库 <span id="historyCount">0</span></h1><p>把灵感留在这里，随时继续创作。</p></div><button class="secondary" data-page="studio"><i data-icon="plus"></i>新建创作</button></div>
+          <div class="info-strip"><i data-icon="hard-drive"></i><span id="storageUsage">图片与参考图保存在当前浏览器，清除网站数据会删除作品，请及时下载。</span></div>
+          <div class="history-tools"><label class="search-wrap"><i data-icon="search"></i><input id="historySearch" type="search" placeholder="搜索画面描述" aria-label="搜索画面描述"></label><select id="historyFilter" aria-label="按模型筛选"><option value="all">全部模型</option><option value="image">GPT Image</option><option value="banana">Nano Banana</option><option value="seedream">Seedream</option></select></div>
+          <div id="historyResults" class="history-grid"></div><div id="emptyHistory" class="empty-page"><i data-icon="images"></i><h2>还没有创作记录</h2><p>完成第一张作品后，会自动出现在这里。</p><button class="secondary" data-page="studio">去创作<i data-icon="arrow-up-right"></i></button></div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <dialog id="settingsDialog" class="dialog" aria-labelledby="settingsTitle">
+    <div class="dialog-head"><div><p class="eyebrow">CONNECT YOUR IMAGINATION</p><h2 id="settingsTitle">API 设置</h2></div><button class="icon-button" data-close aria-label="关闭设置"><i data-icon="x"></i></button></div>
+    <p class="dialog-subtitle">使用你的中转站 API Key，连接三个生图模型系列。</p>
+    <form id="settingsForm" class="stack-form">
+      <label for="baseUrl">接口地址<input type="url" id="baseUrl" required placeholder="https://duoyuanx.com" autocomplete="url"><small>默认使用多元探索，也支持兼容协议的中转站。</small></label>
+      <label for="apiKey">API Key<span class="password-wrap"><input type="password" id="apiKey" required placeholder="输入你的 API Key" autocomplete="off" spellcheck="false"><button type="button" id="toggleKey" class="icon-button" aria-label="显示 API Key"><i data-icon="eye"></i></button></span></label>
+      <label class="checkbox-label"><input type="checkbox" id="rememberKey"><span>在此浏览器记住 API Key<small>仅在自己的设备上启用，密钥会以明文保存在本地。</small></span></label>
+      <label for="timeout">单张等待时间<select id="timeout"><option value="120">2 分钟</option><option value="300">5 分钟（推荐）</option><option value="600">10 分钟</option></select></label>
+      <p class="hint">密钥只发送到上方接口地址。生成时，提示词和参考图也会发送到该中转站。</p>
+      <p id="connectionResult" class="connection-result" role="status" hidden></p>
+      <div class="dialog-actions"><button type="button" class="secondary" id="testConnection"><i data-icon="link"></i>检查连接</button><button class="primary" type="submit"><i data-icon="check"></i>保存设置</button></div>
+      <button type="button" class="text-button danger" id="forgetKey">清除已保存的 API Key</button>
+    </form>
+  </dialog>
+  <dialog id="previewDialog" class="dialog preview-dialog" aria-labelledby="previewTitle"><div class="dialog-head"><h2 id="previewTitle">查看作品</h2><button class="icon-button" data-close aria-label="关闭大图"><i data-icon="x"></i></button></div><div id="previewBody"></div></dialog>
+  <dialog id="confirmDialog" class="dialog small-dialog" aria-labelledby="confirmTitle"><div class="dialog-head"><h2 id="confirmTitle">删除这次创作？</h2><button class="icon-button" data-close aria-label="取消删除"><i data-icon="x"></i></button></div><p class="dialog-subtitle">图片、参考图和生成参数将从本地图库移除。请确认需要的图片已下载。</p><div class="dialog-actions"><button class="secondary" data-close>保留作品</button><button class="primary danger-primary" id="confirmDelete">删除记录</button></div></dialog>
+  <dialog id="helpDialog" class="dialog" aria-labelledby="helpTitle"><div class="dialog-head"><h2 id="helpTitle">创作小指南</h2><button class="icon-button" data-close aria-label="关闭帮助"><i data-icon="x"></i></button></div><div class="help-copy"><section><h3>01 / 连接你的模型</h3><p>在 API 设置中填入接口地址和 Key。模型能否使用、实际价格和剩余额度，以中转站账户为准。</p></section><section><h3>02 / 从文字或图片开始</h3><p>选择模型、比例和数量。图生图可拖入或粘贴最多 6 张参考图，并描述要修改或保留的内容。批量按张依次生成。</p></section><section><h3>03 / 保存与继续创作</h3><p>结果、参考图和参数保存在当前浏览器，可下载、复用参数或继续图生图。清除网站数据、换浏览器或换网址后，无法访问原图库。</p></section><section><h3>生成期间请保持页面打开</h3><p>关闭或刷新页面会中断等待；停止等待并不保证上游停止生成或计费。失败和超时不会自动重试。</p></section><section><h3>无法连接或无法保存图片？</h3><p>纯前端访问需要中转站支持 CORS。若返回的图片链接不允许跨域读取，作品会标记“待保存”，可稍后重新保存或打开原图下载。</p></section><a class="secondary" href="https://docs.deepwl.cn/duoyuanx/zh" target="_blank" rel="noopener noreferrer">查看中转站接入文档<i data-icon="arrow-up-right"></i></a></div></dialog>
+  <div id="toast" class="toast" role="status" hidden><span></span><button aria-label="关闭提示"><i data-icon="x"></i></button></div>
+  <noscript><div class="no-script">请启用 JavaScript 后使用幻彩生图工作台。</div></noscript>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "huancai-static-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "纯前端 AI 生图工作台",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/api.test.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

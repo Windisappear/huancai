@@ -1,14 +1,14 @@
 export const FAMILIES = [
-  { id: 'image', name: 'GPT Image', short: 'GPT', description: '细节刻画 · 文字排版' },
-  { id: 'banana', name: 'Nano Banana', short: 'NB', description: '自然编辑 · 创意融合' },
-  { id: 'seedream', name: 'Seedream', short: 'SD', description: '中文理解 · 视觉创作' },
+  { id: 'image', name: 'Image', short: 'GPT' },
+  { id: 'banana', name: 'Banana', short: 'NB' },
+  { id: 'seedream', name: 'Seedream', short: 'SD' },
 ];
 export const MODELS = [
-  { id: 'gpt-image-2', name: 'GPT Image 2', family: 'image' },
-  { id: 'gpt-image-2-c', name: 'GPT Image 2 · C', family: 'image' },
-  { id: 'gemini-2.5-flash-image', name: 'Nano Banana', family: 'banana' },
-  { id: 'gemini-3-pro-image-preview', name: 'Nano Banana Pro', family: 'banana', pro: true },
-  { id: 'gemini-3.1-flash-image-preview', name: 'Nano Banana 2', family: 'banana' },
+  { id: 'gpt-image-2', name: 'image2', family: 'image' },
+  { id: 'gpt-image-2-c', name: 'image2-c', family: 'image' },
+  { id: 'gemini-2.5-flash-image', name: 'banana', family: 'banana' },
+  { id: 'gemini-3-pro-image-preview', name: 'banana-pro', family: 'banana', pro: true },
+  { id: 'gemini-3.1-flash-image-preview', name: 'banana2', family: 'banana' },
   { id: 'doubao-seedream-4-0-250828', name: 'Seedream 4.0', family: 'seedream' },
   { id: 'doubao-seedream-4-5-251128', name: 'Seedream 4.5', family: 'seedream' },
   { id: 'doubao-seedream-5-0-260128', name: 'Seedream 5.0', family: 'seedream' },

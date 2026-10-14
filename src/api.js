@@ -115,7 +115,16 @@ export async function materializeImage(image, signal) {
     // Never forward the API key to a generated image URL or CDN.
     const response = await fetch(image.url, { signal: controller.signal, credentials: 'omit', referrerPolicy: 'no-referrer' });
     if (!response.ok) throw new Error(`图片下载失败（HTTP ${response.status}）`);
-    const blob = await response.blob();
+    let blob = await response.blob();
+    if (!blob.type || blob.type === 'application/octet-stream' || blob.type === 'binary/octet-stream') {
+      const header = new Uint8Array(await blob.slice(0, 12).arrayBuffer());
+      const matches = (signature, offset = 0) => signature.every((byte, index) => header[offset + index] === byte);
+      const type = matches([137, 80, 78, 71, 13, 10, 26, 10]) ? 'image/png'
+        : matches([255, 216, 255]) ? 'image/jpeg'
+        : matches([82, 73, 70, 70]) && matches([87, 69, 66, 80], 8) ? 'image/webp'
+        : matches([71, 73, 70, 56, 55, 97]) || matches([71, 73, 70, 56, 57, 97]) ? 'image/gif' : '';
+      if (type) blob = blob.slice(0, blob.size, type);
+    }
     if (!blob.type.startsWith('image/') || blob.type.includes('svg')) throw new Error('图片地址返回的内容不是支持的图片文件。');
     return blob;
   } finally { clearTimeout(timer); signal?.removeEventListener('abort', abort); }

@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
 const { chromium } = await import(process.env.PLAYWRIGHT_PACKAGE ? pathToFileURL(process.env.PLAYWRIGHT_PACKAGE).href : '@playwright/test');
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
@@ -48,7 +48,7 @@ const generate = async prompt => {
 const topCard = () => page.locator('#results .result-card').first();
 
 try {
-  await page.goto('http://127.0.0.1:4173');
+  await page.goto(process.env.TEST_BASE_URL || 'http://127.0.0.1:4173');
   await waitReady();
   imageData = await page.evaluate(() => { const canvas = document.createElement('canvas'); canvas.width = 64; canvas.height = 64; const ctx = canvas.getContext('2d'); ctx.fillStyle = '#b9cdf4'; ctx.fillRect(0, 0, 64, 64); ctx.fillStyle = '#1c1f23'; ctx.fillRect(16, 16, 32, 32); return canvas.toDataURL('image/png').split(',')[1]; });
   await page.screenshot({ path: 'test-results/desktop-empty.png', fullPage: true });
@@ -60,6 +60,12 @@ try {
   await page.screenshot({ path: 'test-results/mobile-empty.png', fullPage: true });
   await page.setViewportSize({ width: 1440, height: 1080 });
   log('desktop/mobile layouts at 375, 768, 1024, 1440 px have no horizontal overflow');
+
+  assert.deepEqual(await page.locator('#quality option').allTextContents(), ['自动', '低', '中', '高']);
+  assert.deepEqual(await page.locator('#resolution option').allTextContents(), ['1K', '2K', '4K']);
+  assert.deepEqual(await page.locator('#model option').allTextContents(), ['image2', 'image2-c']);
+  assert.equal(await page.locator('#modelNote, #resolutionNote').count(), 0);
+  log('model, quality and resolution options use concise labels');
 
   await page.locator('.connection-pill').click();
   await page.locator('#baseUrl').fill('https://mock-relay.example/v1');
@@ -86,12 +92,32 @@ try {
   await page.locator('#previewBody [data-download]').click();
   const download = await downloadPromise;
   assert.ok(download.suggestedFilename().endsWith('.png'));
+  assert.equal(await download.failure(), null);
+  assert.deepEqual(await readFile(await download.path()), Buffer.from(imageData, 'base64'));
   await page.keyboard.press('Escape');
   assert.equal(await page.locator('#previewDialog').evaluate(dialog => dialog.open), false);
   await page.reload(); await waitReady();
   assert.match(await topCard().textContent(), /测试：海边建筑与光影/);
   assert.ok(await topCard().locator('.image-open img').evaluate(img => img.src.startsWith('blob:') && img.naturalWidth === 64));
   log('preview, native download, Escape focus flow, and IndexedDB image persistence after reload');
+
+  const tileDownloadPromise = page.waitForEvent('download');
+  await topCard().locator('[data-download]').click();
+  const tileDownload = await tileDownloadPromise;
+  assert.deepEqual(await readFile(await tileDownload.path()), Buffer.from(imageData, 'base64'));
+  const beforeRestore = calls.length;
+  await page.locator('#prompt').fill('changed draft');
+  await page.locator('#quality').selectOption('high');
+  await page.locator('[data-ratio="9:16"]').click();
+  await page.locator('#plusCount').click();
+  await topCard().locator('[data-regenerate]').click();
+  assert.equal(await page.locator('#prompt').inputValue(), '测试：海边建筑与光影');
+  assert.equal(await page.locator('#quality').inputValue(), 'auto');
+  assert.equal(await page.locator('[data-ratio="1:1"]').getAttribute('aria-pressed'), 'true');
+  assert.equal(await page.locator('#countValue').textContent(), '1');
+  assert.equal(await page.locator('#referenceList .reference').count(), 0);
+  assert.equal(calls.length, beforeRestore);
+  log('per-image download after reload saves exact bytes; regenerate restores text settings without a generation request');
 
   await topCard().locator('[data-reference]').click();
   assert.equal(await page.locator('#referenceList .reference').count(), 1);
@@ -109,6 +135,22 @@ try {
   assert.equal(calls.at(-1).body.generationConfig.imageConfig.aspectRatio, '16:9');
   assert.ok(calls.at(-1).url.includes('gemini-3-pro-image-preview:generateContent'));
   log('Nano Banana Pro sends native Gemini reference parts, resolution and aspect ratio');
+
+  const beforePreviewRestore = calls.length;
+  await page.locator('[data-family=image]').click();
+  await page.locator('[data-mode=text]').click();
+  await page.locator('#resolution').selectOption('1K', { force: true });
+  await topCard().locator('[data-preview]').click();
+  await page.locator('#previewBody [data-regenerate]').click();
+  assert.equal(await page.locator('#previewDialog').evaluate(dialog => dialog.open), false);
+  assert.equal(await page.locator('#model').inputValue(), 'gemini-3-pro-image-preview');
+  assert.equal(await page.locator('#resolution').inputValue(), '2K');
+  assert.equal(await page.locator('#prompt').inputValue(), '保留主体，变成水彩画');
+  assert.equal(await page.locator('[data-ratio="16:9"]').getAttribute('aria-pressed'), 'true');
+  assert.equal(await page.locator('[data-mode=reference]').getAttribute('aria-pressed'), 'true');
+  assert.equal(await page.locator('#referenceList .reference').count(), 1);
+  assert.equal(calls.length, beforePreviewRestore);
+  log('preview regenerate closes the modal and restores model, resolution, ratio, prompt and reference without billing');
 
   await page.locator('[data-family=seedream]').click();
   await page.locator('#model').selectOption('doubao-seedream-5-0-260128');
@@ -157,13 +199,54 @@ try {
   await generate('URL 返回及本地保存测试');
   assert.match(await topCard().textContent(), /待保存/);
   assert.equal(remoteHeaders.authorization, undefined);
+  await topCard().locator('[data-download]').click();
+  await page.locator('#downloadError').waitFor({ state: 'visible' });
+  assert.equal(await page.locator('#previewBody a').getAttribute('href'), 'https://mock-cdn.example/result.png');
+  assert.equal(await page.locator('#previewBody a').getAttribute('rel'), 'noopener noreferrer');
+  assert.equal(remoteHeaders.authorization, undefined);
+  const popupPromise = context.waitForEvent('page');
+  await page.locator('#previewBody a').click();
+  const popup = await popupPromise;
+  await popup.waitForLoadState();
+  assert.equal(popup.url(), 'https://mock-cdn.example/result.png');
+  await popup.close();
+  await page.keyboard.press('Escape');
+  log('blocked remote downloads show an actionable original-image link with no credentials or silent popup failure');
+
   remoteAllowed = true;
-  await topCard().locator('[data-retry-save]').click();
+  const remoteDownloadPromise = page.waitForEvent('download');
+  await topCard().locator('[data-download]').click();
+  const remoteDownload = await remoteDownloadPromise;
+  assert.deepEqual(await readFile(await remoteDownload.path()), Buffer.from(imageData, 'base64'));
   await page.waitForFunction(() => document.querySelector('#results .result-card .save-note').textContent.includes('已保存到当前浏览器'));
   assert.equal(remoteHeaders.authorization, undefined);
   await page.reload(); await waitReady();
   assert.ok(await topCard().locator('.image-open img').evaluate(img => img.src.startsWith('blob:')));
   log('URL-only output is marked unsaved on CORS failure, can be saved later, and never receives credentials');
+
+  behavior = 'success';
+  await page.locator('#plusCount').click();
+  await generate('逐图操作测试');
+  assert.equal(await topCard().locator('[data-regenerate]').count(), 2);
+  const beforeBatchRestore = calls.length;
+  await page.locator('#minusCount').click();
+  await topCard().locator('[data-regenerate]').nth(1).click();
+  assert.equal(await page.locator('#countValue').textContent(), '2');
+  assert.equal(calls.length, beforeBatchRestore);
+  for (const width of [375, 768, 1440]) {
+    await page.setViewportSize({ width, height: 1000 });
+    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+    const actions = topCard().locator('.image-actions').first();
+    const controls = await actions.locator('button').evaluateAll(buttons => buttons.map(button => {
+      const rect = button.getBoundingClientRect();
+      const parent = button.parentElement.getBoundingClientRect();
+      return rect.width >= 44 && rect.height >= 44 && rect.left >= parent.left && rect.right <= parent.right;
+    }));
+    assert.ok(controls.every(Boolean), `image controls fit at ${width}`);
+    await page.screenshot({ path: `test-results/results-${width}.png`, fullPage: true });
+  }
+  await page.setViewportSize({ width: 1440, height: 1080 });
+  log('every batch image has a restore action; original count is preserved and mobile/desktop controls fit');
 
   await page.locator('.nav-item[data-page=history]').click();
   await page.locator('#historySearch').fill('URL 返回');

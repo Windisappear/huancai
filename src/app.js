@@ -2,6 +2,7 @@ import { FAMILIES, MODELS, RATIOS, getModel, sizeLabel, sanitizeDraft } from './
 import { buildRequest, normalizeBaseUrl, generateImage, materializeImage, fileToReference, checkConnection, redact, safeImageUrl } from './api.js';
 import { loadConfig, saveConfig, forgetKey, loadDraft, saveDraft, listTasks, putTask, deleteTask, storageEstimate } from './storage.js';
 import { icon, hydrateIcons } from './icons.js';
+import { downloadBlob } from './download.js';
 
 const $ = selector => document.querySelector(selector);
 const $$ = selector => [...document.querySelectorAll(selector)];
@@ -11,6 +12,7 @@ const date = value => new Date(value).toLocaleString('zh-CN', { month: '2-digit'
 const bytes = value => value >= 1024 * 1024 ? `${(value / 1024 / 1024).toFixed(1)} MB` : `${Math.ceil(value / 1024)} KB`;
 const state = { config: loadConfig(), draft: loadDraft(), refs: [], tasks: [], active: null, page: 'studio', uploading: false, deleting: null, preview: null, storageReady: false };
 const blobUrls = new Map();
+const downloading = new Set();
 const statusLabels = { running: '正在生成', saving: '正在保存', succeeded: '已完成', partial: '部分完成', failed: '生成失败', cancelled: '已停止等待', interrupted: '等待已中断' };
 let toastTimer;
 let connectionController;
@@ -56,7 +58,6 @@ function renderControls() {
   const model = getModel(state.draft.modelId);
   $('#familyTabs').innerHTML = FAMILIES.map(family => `<button type="button" data-family="${family.id}" class="${family.id === model.family ? 'active' : ''}" aria-pressed="${family.id === model.family}">${family.name}</button>`).join('');
   $('#model').innerHTML = MODELS.filter(item => item.family === model.family).map(item => `<option value="${item.id}" ${item.id === model.id ? 'selected' : ''}>${item.name}</option>`).join('');
-  $('#modelNote').textContent = model.family === 'image' ? '细节刻画与文字排版 · 图生图需渠道支持' : model.family === 'banana' ? '自然编辑与多图融合 · Gemini 原生接口' : '中文理解与视觉创作 · 原生约 2K 输出';
   $$('[data-mode]').forEach(button => { button.classList.toggle('selected', button.dataset.mode === state.draft.mode); button.setAttribute('aria-pressed', String(button.dataset.mode === state.draft.mode)); });
   $('#referenceField').hidden = state.draft.mode !== 'reference';
   $('#prompt').value = state.draft.prompt;
@@ -72,7 +73,6 @@ function renderControls() {
   $('#resolutionField').hidden = model.family !== 'banana';
   $('#resolution').value = model.pro ? state.draft.resolution : '1K';
   $('#resolution').disabled = !model.pro;
-  $('#resolutionNote').textContent = model.pro ? '实际清晰度以渠道返回为准。' : '此 Flash Image 渠道固定约 1K。';
   $('#countValue').textContent = state.draft.count;
   $('#minusCount').disabled = state.draft.count <= 1;
   $('#plusCount').disabled = state.draft.count >= 4;
@@ -104,7 +104,7 @@ function taskCard(task) {
   const active = state.active?.id === task.id;
   const hasRemote = task.images.some(img => !img.blob);
   const saveMessage = task.persistError ? '本地保存失败，请立即下载或重新保存' : hasRemote ? '有图片待保存 · 临时链接可能过期' : '已保存到当前浏览器';
-  const images = task.images.length ? `<div class="image-grid ${task.images.length > 1 ? 'multi' : ''}">${task.images.map((img, index) => `<div class="image-tile"><button class="image-open" data-preview="${task.id}" data-index="${index}" aria-label="查看大图 ${index + 1}"><img src="${escapeHtml(imageSource(img))}" alt="${escapeHtml(task.prompt)}" loading="lazy" referrerpolicy="no-referrer"></button><button class="download-float" data-download="${task.id}" data-index="${index}" aria-label="下载图片 ${index + 1}">${icon('download')}</button></div>`).join('')}</div>` : `<div class="pending-image">${icon(active ? 'loader' : 'help', active ? 'spin' : '')}<span>${statusLabels[task.status] || '等待确认'}</span></div>`;
+  const images = task.images.length ? `<div class="image-grid ${task.images.length > 1 ? 'multi' : ''}">${task.images.map((img, index) => `<div class="image-tile"><button class="image-open" data-preview="${task.id}" data-index="${index}" aria-label="查看大图 ${index + 1}"><img src="${escapeHtml(imageSource(img))}" alt="${escapeHtml(task.prompt)}" loading="lazy" referrerpolicy="no-referrer"></button><div class="image-actions"><button type="button" class="icon-button" data-regenerate="${task.id}" data-index="${index}" aria-label="重新生成图片 ${index + 1}" title="重新生成：恢复原始参数" ${state.active || state.uploading ? 'disabled' : ''}>${icon('refresh')}</button><button type="button" class="icon-button" data-download="${task.id}" data-index="${index}" aria-label="下载图片 ${index + 1}" title="下载原图">${icon('download')}</button></div></div>`).join('')}</div>` : `<div class="pending-image">${icon(active ? 'loader' : 'help', active ? 'spin' : '')}<span>${statusLabels[task.status] || '等待确认'}</span></div>`;
   return `<article class="result-card" data-task="${task.id}"><div class="result-meta"><span class="model-dot"></span>${escapeHtml(task.modelName)}<span class="status ${task.status}">${statusLabels[task.status] || '等待确认'}</span></div>${images}<div class="result-footer"><p title="${escapeHtml(task.prompt)}">${escapeHtml(task.prompt)}</p><div class="meta-line">${escapeHtml(task.ratio)} · ${escapeHtml(sizeLabel(task))} · ${date(task.createdAt)}</div>${task.references.length ? `<div class="history-references"><span>参考图</span>${task.references.map(ref => `<img src="${blobUrl(ref.blob)}" alt="${escapeHtml(ref.name)}" loading="lazy">`).join('')}</div>` : ''}${task.error ? `<div class="task-error">${escapeHtml(task.error)}</div>` : ''}${task.images.length ? `<div class="save-note ${task.persistError || hasRemote ? 'warning' : ''}">${icon(task.persistError || hasRemote ? 'help' : 'hard-drive')}${saveMessage}</div>` : ''}<div class="result-actions"><button class="text-button" data-reuse="${task.id}" ${state.active ? 'disabled' : ''}>${icon('refresh')}复用参数</button>${task.images[0]?.blob ? `<button class="text-button" data-reference="${task.id}" data-index="0" ${state.active ? 'disabled' : ''}>${icon('image-plus')}图生图</button>` : ''}${task.persistError || hasRemote ? `<button class="text-button" data-retry-save="${task.id}" ${active ? 'disabled' : ''}>${icon('hard-drive')}重新保存</button>` : ''}<button class="text-button danger delete-action" data-delete="${task.id}" aria-label="删除这次创作" ${active ? 'disabled' : ''}>${icon('trash')}</button></div></div></article>`;
 }
 function renderResults() {
@@ -264,13 +264,17 @@ async function testConnection() {
 
 function findTask(id) { return state.tasks.find(task => task.id === id); }
 function reuseTask(task) {
-  if (state.active) return;
+  if (state.active || state.uploading) return;
   state.draft = sanitizeDraft(task);
   state.refs = task.references.map(ref => ({ ...ref }));
+  $('#previewDialog').close();
+  showError();
   renderControls();
   setPage('studio');
+  releaseUnusedUrls();
+  $('.control-panel').scrollIntoView({ block: 'start' });
   $('#prompt').focus();
-  notify('已恢复提示词、模型、参数和参考图。');
+  notify('已恢复原始参数和参考图，可修改后再生成。');
 }
 function useImageAsReference(task, index) {
   if (state.active) return;
@@ -284,23 +288,47 @@ function useImageAsReference(task, index) {
   $('#prompt').focus();
   notify('已添加为参考图，请描述希望做出的修改。');
 }
-function downloadImage(task, index) {
+async function downloadImage(task, index, button) {
   const image = task.images[index];
-  if (!image) return;
-  const anchor = document.createElement('a');
-  anchor.href = imageSource(image);
-  if (image.blob) {
-    const ext = image.blob.type.includes('jpeg') ? 'jpg' : image.blob.type.includes('webp') ? 'webp' : 'png';
-    anchor.download = `幻彩-${task.modelName.replace(/[^a-zA-Z0-9\u4e00-\u9fa5-]/g, '-')}-${task.id.slice(0, 8)}-${index + 1}.${ext}`;
-  } else { anchor.target = '_blank'; anchor.rel = 'noopener noreferrer'; notify('已打开原图链接，请在新页面保存；该图片尚未存入本地图库。'); }
-  document.body.append(anchor); anchor.click(); anchor.remove();
+  if (!image || downloading.has(image.id)) return;
+  downloading.add(image.id);
+  button.disabled = true;
+  button.setAttribute('aria-busy', 'true');
+  try {
+    const wasRemote = !image.blob;
+    if (wasRemote) notify('正在下载原图…');
+    const blob = image.blob || await materializeImage(image);
+    const ext = { 'image/jpeg': 'jpg', 'image/webp': 'webp', 'image/gif': 'gif', 'image/avif': 'avif' }[blob.type] || 'png';
+    downloadBlob(blob, `幻彩-${task.modelName.replace(/[^a-zA-Z0-9\u4e00-\u9fa5-]/g, '-')}-${task.id.slice(0, 8)}-${index + 1}.${ext}`);
+    if (wasRemote && findTask(task.id)) {
+      image.blob = blob;
+      delete image.url;
+      delete image.saveError;
+      await persist(task);
+      renderResults();
+      if ($('#previewDialog').open && state.preview?.taskId === task.id && state.preview.index === index) previewImage(task, index);
+    }
+    notify('已发起下载，请查看浏览器下载记录。');
+  } catch (error) {
+    const message = safeImageUrl(image.url) ? '无法直接下载，请点击“打开原图”，在新页面保存。' : '下载失败，请重试或检查浏览器下载权限。';
+    if (safeImageUrl(image.url) && !document.querySelector('dialog[open]:not(#previewDialog)')) {
+      previewImage(task, index);
+      $('#downloadError').textContent = message;
+      $('#downloadError').hidden = false;
+    }
+    notify(message);
+  } finally {
+    downloading.delete(image.id);
+    button.disabled = false;
+    button.removeAttribute('aria-busy');
+  }
 }
 function previewImage(task, index) {
   const image = task.images[index];
   if (!image) return;
   state.preview = { taskId: task.id, index };
   $('#previewTitle').textContent = `${task.modelName} · ${index + 1} / ${task.images.length}`;
-  $('#previewBody').innerHTML = `<img class="preview-image" src="${escapeHtml(imageSource(image))}" alt="${escapeHtml(task.prompt)}" referrerpolicy="no-referrer"><p class="preview-details">${image.width ? `${image.width} × ${image.height} · ` : ''}${date(task.createdAt)} · ${image.blob ? task.persistError ? '尚未持久保存' : '已保存到本地图库' : '临时图片链接 · 尚未保存'}</p><p class="preview-copy">${escapeHtml(task.prompt)}</p>${image.revisedPrompt ? `<details><summary>模型调整后的提示词</summary><p class="preview-copy">${escapeHtml(image.revisedPrompt)}</p></details>` : ''}<div class="preview-actions"><button class="primary" data-download="${task.id}" data-index="${index}">${icon('download')}${image.blob ? '下载原图' : '打开原图'}</button><button class="secondary" data-reference="${task.id}" data-index="${index}" ${!image.blob || state.active ? 'disabled' : ''}>${icon('image-plus')}继续图生图</button><button class="text-button" data-copy="${task.id}">${icon('copy')}复制提示词</button></div>`;
+  $('#previewBody').innerHTML = `<img class="preview-image" src="${escapeHtml(imageSource(image))}" alt="${escapeHtml(task.prompt)}" referrerpolicy="no-referrer"><p class="preview-details">${image.width ? `${image.width} × ${image.height} · ` : ''}${date(task.createdAt)} · ${image.blob ? task.persistError ? '尚未持久保存' : '已保存到本地图库' : '临时图片链接 · 尚未保存'}</p><p class="preview-copy">${escapeHtml(task.prompt)}</p>${image.revisedPrompt ? `<details><summary>模型调整后的提示词</summary><p class="preview-copy">${escapeHtml(image.revisedPrompt)}</p></details>` : ''}<p id="downloadError" class="task-error" role="alert" hidden></p><div class="preview-actions"><button type="button" class="primary" data-download="${task.id}" data-index="${index}">${icon('download')}下载原图</button><button type="button" class="secondary" data-regenerate="${task.id}" data-index="${index}" ${state.active || state.uploading ? 'disabled' : ''}>${icon('refresh')}重新生成</button><button class="secondary" data-reference="${task.id}" data-index="${index}" ${!image.blob || state.active ? 'disabled' : ''}>${icon('image-plus')}继续图生图</button><button class="text-button" data-copy="${task.id}">${icon('copy')}复制提示词</button>${!image.blob && safeImageUrl(image.url) ? `<a class="text-button" href="${escapeHtml(safeImageUrl(image.url))}" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">${icon('arrow-up-right')}打开原图</a>` : ''}</div>`;
   openDialog('previewDialog');
 }
 async function retrySave(task, button) {
@@ -379,9 +407,10 @@ document.addEventListener('click', async event => {
   else if (data.prompt && !state.active) { state.draft.prompt = data.prompt; renderControls(); $('#prompt').focus(); }
   else if (data.removeRef !== undefined && !state.active) { state.refs.splice(Number(data.removeRef), 1); renderReferences(); releaseUnusedUrls(); }
   else if (data.reuse) { const task = findTask(data.reuse); if (task) reuseTask(task); }
+  else if (data.regenerate) { const task = findTask(data.regenerate); if (task) reuseTask(task); }
   else if (data.preview) { const task = findTask(data.preview); if (task) previewImage(task, Number(data.index)); }
   else if (data.reference) { const task = findTask(data.reference); if (task) useImageAsReference(task, Number(data.index)); }
-  else if (data.download) { const task = findTask(data.download); if (task) downloadImage(task, Number(data.index)); }
+  else if (data.download) { const task = findTask(data.download); if (task) await downloadImage(task, Number(data.index), button); }
   else if (data.delete) { state.deleting = data.delete; openDialog('confirmDialog'); }
   else if (data.retrySave) { const task = findTask(data.retrySave); if (task) await retrySave(task, button); }
   else if (data.copy) { try { await navigator.clipboard.writeText(findTask(data.copy).prompt); notify('提示词已复制。'); } catch { notify('无法访问剪贴板，请选中提示词后手动复制。'); } }

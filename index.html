@@ -36,7 +36,7 @@
             <form id="creationForm">
               <fieldset id="creationFields">
                 <div class="segmented" aria-label="创作模式"><button type="button" data-mode="text" class="selected" aria-pressed="true"><i data-icon="sparkles"></i>文生图</button><button type="button" data-mode="reference" aria-pressed="false"><i data-icon="image-plus"></i>图生图</button></div>
-                <div class="field"><label>生成模型</label><div id="familyTabs" class="family-tabs"></div><label class="sr-only" for="model">模型版本</label><div class="select-wrap"><span class="model-symbol"><i data-icon="aperture"></i></span><select id="model"></select><i data-icon="chevron-down"></i></div><p class="model-note" id="modelNote"></p></div>
+                <div class="field"><label>生成模型</label><div id="familyTabs" class="family-tabs"></div><label class="sr-only" for="model">模型版本</label><div class="select-wrap"><span class="model-symbol"><i data-icon="aperture"></i></span><select id="model"></select><i data-icon="chevron-down"></i></div></div>
                 <div class="field" id="referenceField" hidden>
                   <label for="referenceInput">参考图片 <span id="referenceCount">0 / 6</span></label>
                   <div id="referenceList" class="reference-list"></div>
@@ -46,8 +46,8 @@
                 </div>
                 <div class="field"><label for="prompt">画面描述<button type="button" class="text-button" id="clearPrompt">清空</button></label><div class="prompt-wrap"><textarea id="prompt" maxlength="4000" required placeholder="描述你想看到的画面，试着加入主体、光线、构图和风格…"></textarea><span class="char-count" id="charCount">0 / 4000</span></div></div>
                 <div class="field"><label>画面比例<span id="sizeHint">1024 × 1024</span></label><div id="ratioOptions" class="size-options"></div></div>
-                <div class="field" id="qualityField"><label for="quality">生成质量</label><div class="select-wrap plain"><select id="quality"><option value="auto">自动 · 由模型决定</option><option value="low">草稿 · 更快生成</option><option value="medium">均衡 · 日常创作</option><option value="high">精细 · 更多细节</option></select><i data-icon="chevron-down"></i></div></div>
-                <div class="field" id="resolutionField" hidden><label for="resolution">清晰度</label><div class="select-wrap plain"><select id="resolution"><option value="1K">1K · 标准</option><option value="2K">2K · 高清</option><option value="4K">4K · 超清</option></select><i data-icon="chevron-down"></i></div><p class="hint" id="resolutionNote"></p></div>
+                <div class="field" id="qualityField"><label for="quality">生成质量</label><div class="select-wrap plain"><select id="quality"><option value="auto">自动</option><option value="low">低</option><option value="medium">中</option><option value="high">高</option></select><i data-icon="chevron-down"></i></div></div>
+                <div class="field" id="resolutionField" hidden><label for="resolution">清晰度</label><div class="select-wrap plain"><select id="resolution"><option value="1K">1K</option><option value="2K">2K</option><option value="4K">4K</option></select><i data-icon="chevron-down"></i></div></div>
                 <div class="field row between"><label>生成数量</label><div class="stepper"><button type="button" id="minusCount" aria-label="减少张数">−</button><output id="countValue">1</output><button type="button" id="plusCount" aria-label="增加张数">+</button></div></div>
               </fieldset>
               <div class="generate-area"><div class="price-row"><span id="batchHint">准备好，把想象变成画面</span><span id="batchCount">1 张</span></div><button type="submit" class="primary generate" id="generateButton"><i data-icon="sparkles"></i><span>开始生成</span><kbd>Ctrl ↵</kbd></button><button type="button" class="secondary full" id="cancelButton" hidden><i data-icon="square"></i>停止等待</button><p><i data-icon="hard-drive"></i>作品自动保存在当前浏览器</p><p class="billing-note">生成费用由你的中转站账户结算</p></div>

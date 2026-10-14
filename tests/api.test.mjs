@@ -107,3 +107,23 @@ test('cancelled generations abort waiting without automatically retrying', async
     await assert.rejects(promise, { name: 'AbortError' });
   } finally { globalThis.fetch = originalFetch; }
 });
+
+test('image downloads recognize binary PNG, JPEG and WebP responses without trusting arbitrary files', async () => {
+  const originalFetch = globalThis.fetch;
+  try {
+    for (const [header, type] of [
+      [[137, 80, 78, 71, 13, 10, 26, 10], 'image/png'],
+      [[255, 216, 255, 224], 'image/jpeg'],
+      [[82, 73, 70, 70, 0, 0, 0, 0, 87, 69, 66, 80], 'image/webp'],
+    ]) {
+      globalThis.fetch = async () => new Response(Uint8Array.from(header), { headers: { 'Content-Type': 'application/octet-stream' } });
+      const blob = await materializeImage({ url: 'https://cdn.example/result' });
+      assert.equal(blob.type, type);
+      assert.deepEqual([...new Uint8Array(await blob.arrayBuffer())], header);
+    }
+    for (const type of ['application/octet-stream', 'text/html', 'image/svg+xml']) {
+      globalThis.fetch = async () => new Response('<html>not an image</html>', { headers: { 'Content-Type': type } });
+      await assert.rejects(materializeImage({ url: 'https://cdn.example/result' }), /不是支持的图片/);
+    }
+  } finally { globalThis.fetch = originalFetch; }
+});
